@@ -1,0 +1,26 @@
+
+type Author{
+    id: ID
+    name: String
+}
+
+type Post {
+    id: ID
+    text: String
+    author: Author
+}
+
+
+type Query{
+    posts : [Post]
+    authors: [Author]
+    author(id:String) : Author
+}
+
+input AuthorInput {
+    name: String
+}
+
+type Mutation {
+    addAuthor(authorInput: AuthorInput) : Author
+}
